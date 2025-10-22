@@ -35,13 +35,13 @@ public class LinkedStack {
     }
 
     public String toString() {
+        int i = 0;
+        String str = "";
 
         if (tail == null) {
             return "EMPTY";
         }
         else {
-            int i = 0;
-            String str = "";
             for (Node node = tail; node != null; node = node.getPrev()) {
                     if(i == 0) {
                         str = str + node.getValue();
