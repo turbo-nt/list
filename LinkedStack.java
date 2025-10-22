@@ -12,26 +12,23 @@ public class LinkedStack {
     }
 
     public int pop() {
-        // ваш код
         int value = 0;
         if (tail != null) {
             value = tail.getValue();
             tail = tail.getPrev();
         }
         return value;
-        // возьмите value из последнего узла
-        // назначьте предыдущий к последнему узлу последним узлом
     }
 
     public int getSize() {
         return size;
-        // верните размер стека
     }
 
     public boolean isEmpty() {
-        if (size == 0) {return true;}
+        if (size == 0) {
+            return true;
+        }
         return false;
-        // верните ответ на вопрос, не пустой ли стек
     }
 
     public String toString() {
@@ -40,15 +37,16 @@ public class LinkedStack {
 
         if (tail == null) {
             return "EMPTY";
-        }
-        else {
+        } else {
             for (Node node = tail; node != null; node = node.getPrev()) {
-                    if(i == 0) {
-                        str = str + node.getValue();
-                        i++;
-                    }else {str = str + " -> " + node.getValue();}
+                if (i == 0) {
+                    str = str + node.getValue();
+                    i++;
+                } else {
+                    str = str + " -> " + node.getValue();
                 }
             }
-        return str;
         }
+        return str;
+    }
 }
