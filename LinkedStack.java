@@ -33,20 +33,20 @@ public class LinkedStack {
 
     public String toString() {
         int i = 0;
-        String str = "";
+        StringBuilder sb = new StringBuilder();
 
         if (tail == null) {
             return "EMPTY";
         } else {
             for (Node node = tail; node != null; node = node.getPrev()) {
                 if (i == 0) {
-                    str = str + node.getValue();
+                    sb.append(node.getValue());
                     i++;
                 } else {
-                    str = str + " -> " + node.getValue();
+                    sb.append(" -> " + node.getValue());
                 }
             }
         }
-        return str;
+        return sb.toString();
     }
 }
